@@ -1,0 +1,85 @@
+.main-content-preview {
+  > .content {
+    max-width: 1024px;
+    margin: 0 auto;
+    height: 100%;
+    padding: 0 20px;
+    font-family: var(--font-primary), sans-serif;
+    overflow: hidden;
+  }
+  div > .content {
+    max-width: 1024px;
+    margin: 0 auto;
+    height: 100%;
+    padding: 0 20px;
+    font-family: var(--font-primary), sans-serif;
+    overflow: hidden;
+  }
+}
+.error {
+  background: var(--bg-failed);
+  margin: 0 auto;
+  text-align: center;
+  max-width: 500px;
+  padding: 20px;
+  font-size: 1.5em;
+  font-weight: bold;
+  animation: bounceInDown 1.2s;
+}
+.warning {
+  padding: 0 10px;
+  border-radius: var(--border-radius);
+  background: var(--bg-failed);
+  color: var(--color-primary);
+  text-shadow: none;
+  margin-right: 10px;
+}
+
+.success {
+  padding: 4px 5px;
+  background: var(--bg-pastel-green);
+  color: var(--color-primary);
+}
+
+.emoji {
+  width: 1.2em;
+  height: 1.2em;
+  margin: 0 0.1em 0 0.1em;
+  vertical-align: -0.25em;
+}
+
+.hide {
+  display: none;
+}
+
+.qky-button {
+  position: relative;
+  background: var(--bg-main-light);
+  border: var(--border-template);
+  padding: 10px 25px;
+  font-family: var(--font-primary);
+  font-size: 25px;
+  font-weight: bold;
+  box-shadow: 0 0 0 0 var(--bg-main-light);
+  transition: 0s;
+  border-radius: var(--border-radius);
+  &.hero-button {
+    bottom: -35px;
+    color: var(--color-secondary);
+  }
+  &:hover {
+    box-shadow: 0 0 0 1em transparent;
+    transition: 1s;
+  }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: 1.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+  transform: translate(0, 100%);
+}

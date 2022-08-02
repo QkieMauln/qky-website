@@ -1,2 +1,73 @@
-$main: #272727;
-$secondary: #FDFDFD;
+$default-variable: (
+  "font-primary": Catamaran,
+  "font-secondary": Viga,
+  "color-dark": black,
+  "bg-failed": #cf463c,
+  "bg-success": #1fcc00,
+  // bg-main-light: #378df0,
+  "bg-main": #2e75c7,
+  // bg-failed: #df4b40 ,
+  // "bg-pastel-pink": #f04fc3,
+  // "bg-pastel-pink-light": #ffa8a8,
+  // "bg-pastel-orange": #d5911c,
+  // "bg-pastel-orange-light": #dea271,
+  // "bg-pastel-yellow-light": #f5df89,
+  // "bg-pastel-green": #3cc324,
+  // "bg-pastel-green-light": #b5de71,
+  // "bg-pastel-blue": #1f80f0,
+  // "bg-pastel-blue-light": #b1f5ca,
+  "bg-pattern": url(../assets/background_pine_v.svg),
+  "color-link": #ffebb8,
+  "color-primary": #ffffff,
+  "color-secondary": #ffffff,
+  "shadow-color": rgba(0, 0, 0, 0.25),
+  "border-radius": 5px,
+  "border-template": 0.2px solid rgba(255, 255, 255, 0.233),
+  "background-filter": none,
+  "text-spacing": 0px
+);
+$custom-pallete: (
+  "simply": (
+    "font-primary": "Open Sans",
+    "font-secondary": "Open Sans",
+    "bg-main": #161616,
+    "bg-main-light": #ffffff,
+    "bg-main-dark": #222222,
+    "color-link": #32c3f0,
+    "color-primary": #ffffff,
+    "color-secondary": #000000,
+    "bg-failed": #ffffff,
+    "bg-success": #ffffff,
+    "bg-pattern": linear-gradient(0, transparent, transparent),
+    "border-radius": 5px,
+    "border-template": 1px solid rgba(255, 255, 255, 0.233),
+    "shadow-color": transparent,
+    "background-filter": saturate(0)
+  ),
+  "pinky": (
+    "bg-main": #d3a5ff,
+    // "bg-main": #b58cec,
+    // "bg-main-dark": #9371d2,
+    "color-link": rgb(194, 255, 226),
+    "bg-failed": #8bdbb6,
+    "bg-success": #8bdbb6,
+    "color-primary": #111111,
+    "color-secondary": #111111,
+    "border-radius": 5px,
+    "border-template": 1px solid,
+    "background-filter": saturate(0)
+  ),
+  "gore": (
+    "bg-main": #ff2a2a,
+    // "bg-main": #b58cec,
+    // "bg-main-dark": #9371d2,
+    "color-link": rgb(252, 207, 82),
+    "bg-failed": #eb8633,
+    "bg-success": #f7fa2e,
+    "color-primary": #111111,
+    "color-secondary": #111111,
+    "border-radius": 10px,
+    "border-template": 2px dashed,
+    "background-filter": saturate(0)
+  )
+);

@@ -1,4 +1,191 @@
-h1, h2, h3, h4 {
+@use "./variables";
+@use "sass:map";
+@import url("https://fonts.googleapis.com/css2?family=Catamaran&family=Viga&family=Open+Sans&family=Atkinson+Hyperlegible&family=Poppins&display=swap");
+
+:root {
+  @each $name, $color in $default-variable {
+    @if $name == "bg-main" or $name == "bg-failed" or $name == "bg-success" {
+      --#{$name}#{'-light'}: #{$color};
+      --#{$name}: #{mix(map.get($default-variable, "color-dark"), $color, 25%)};
+      --#{$name}#{'-dark'}: #{mix(map.get($default-variable, "color-dark"), $color, 50%)};
+    } @else {
+      --#{$name}: #{$color};
+    }
+  }
+  @each $name, $palls in $custom-pallete {
+    [data-theme-cp="#{$name}"] {
+      @each $name, $color in $palls {
+        @if $name == "bg-main" or $name == "bg-failed" or $name == "bg-success" {
+          --#{$name}#{'-light'}: #{$color} #{"!important"};
+          --#{$name}: #{mix(map.get($default-variable, "color-dark"), $color, 15%)} #{"!important"};
+          --#{$name}#{'-dark'}: #{mix(map.get($default-variable, "color-dark"), $color, 30%)} #{"!important"};
+        } @else {
+          --#{$name}: #{$color} !important;
+        }
+      }
+    }
+  }
+}
+
+* {
+  box-sizing: inherit;
+  color: inherit;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+    color: inherit;
+  }
+}
+
+html {
+  font-family: var(--font-primary), sans-serif;
+  min-height: 100%;
+  box-sizing: border-box;
+  overflow-y: auto !important;
+  overflow-x: hidden;
+  font-size: 90%;
+}
+
+a:any-link {
+  color: var(--color-link);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+body {
+  background: var(--bg-pattern), var(--bg-main-dark);
+  color: var(--color-primary);
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-primary), sans-serif;
+  background-attachment: fixed;
+  // filter: saturate(0) sepia(1) hue-rotate(170deg);
+}
+
+.root {
+  // overflow: hidden;
+
+  @each $name, $palls in $custom-pallete {
+    &[data-theme-cp="#{$name}"] {
+      background: var(--bg-pattern), var(--bg-main-dark);
+      background-attachment: fixed;
+      color: var(--color-primary);
+    }
+  }
+}
+
+img {
+  image-rendering: pixelated;
+  width: calc(100% - 20px);
+  max-width: 300px;
+  height: auto;
+}
+
+button.btn {
+  margin-top: 5px;
+  padding: 2px 10px;
+  background: var(--bg-main);
+  border: var(--border-template);
+  border-radius: var(--border-radius);
+
+  transition: 0.3s;
+  cursor: pointer;
+  &:hover {
+    background: var(--bg-main-dark);
+  }
+}
+hr {
+  border: 1px solid var(--bg-main-light);
+  background-color: var(--bg-main-light);
+  height: 2px;
+  position: relative;
+  width: 75%;
+  overflow: visible;
+  margin: 75px auto;
+  line-height: 1;
+
+  &::before {
+    content: "";
+    background: var(--bg-main-light);
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    border: 2px solid var(--bg-main-light);
+    top: -8px;
+    left: 50%;
+    position: relative;
+    z-index: 1;
+    margin: 0 0 0 -6px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  // margin-bottom: 1px;
+  text-align: center;
+  line-height: 1em;
+}
+
+table {
+  margin: 0 auto;
+  border: 1px solid var(--color-primary);
+  border-collapse: collapse;
+  // overflow: hidden;
+  overflow-x: auto;
+  width: 100%;
+}
+
+th,
+tr,
+td {
+  margin: 0;
+  padding: 6px 20px;
+  border-right: 1px solid var(--color-primary);
+}
+
+th {
+  background: var(--bg-main);
+  border-bottom: 3px solid var(--color-primary);
+}
+
+tbody tr:nth-child(2n) {
+  background: rgba(0, 0, 0, 0.145);
+}
+
+blockquote {
+  margin-left: 0;
+  padding-top: 1px;
+  padding-left: 10px;
+  border-left: 5px solid var(--bg-main-light);
+}
+
+pre {
+  width: 100%;
+  padding: 5px;
+  font-size: 12px;
+  background: var(--bg-main-dark);
+  box-shadow: 2px 2px 6px var(--shadow-color);
+  white-space: pre-wrap;
+}
+
+ul,
+ol {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 20px;
+}
+
+h1,
+h2,
+h3,
+h4 {
   margin: 0;
   padding: 0;
 }

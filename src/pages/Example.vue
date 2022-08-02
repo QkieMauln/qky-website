@@ -9,13 +9,19 @@
     <button style="margin: 0 0 15px 0" @click.prevent="getName">Make Request</button>
 
     <h2>Pinia</h2>
-    <p>Click the buttons to modify the <code>count</code> state</p>
+    <p>
+      Click the buttons to modify the
+      <code>count</code>
+      state
+    </p>
     <code>count: {{ count }}</code>
     <div class="button-wrapper">
       <button @click.prevent="count++">Increment</button>
       <button @click.prevent="count--">Decrement</button>
       <button @click.prevent="count = count ** 2">Square</button>
     </div>
+    <button @click.prevent="emitEvent(true)">Emit Success Event</button>
+    <button @click.prevent="emitEvent(false)">Emit Error Event</button>
   </div>
 </template>
 
@@ -23,6 +29,8 @@
   import { ref } from "vue";
   import { storeToRefs } from "pinia";
   import $axios from "@/lib/axios";
+  import axios from "axios";
+  import $bus from "@/lib/eventBus";
   import useExampleStore from "@/store/example";
 
   const store = useExampleStore();
@@ -31,6 +39,16 @@
 
   interface User {
     username: string;
+  }
+  function emitEvent(success: boolean) {
+    axios
+      .get("https://goquotes-api.herokuapp.com/api/v1/random?count=1")
+      .then((r) => {
+        $bus.emit("alertTest", { success, message: r.data.quotes[0].text });
+      })
+      .catch((e) => {
+        $bus.emit("alertTest", { message: "Error while fetching the Random Shit" });
+      });
   }
 
   async function getName() {
@@ -44,11 +62,11 @@
 
 <style lang="scss" scoped>
   button {
-    background: $main;
-    color: $secondary;
-    border: none;
+    background: var(--main);
+    color: var(--secondary);
+    border: var(--border-template);
     padding: 10px 15px;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     cursor: pointer;
     transition: all 90ms ease-in-out;
 

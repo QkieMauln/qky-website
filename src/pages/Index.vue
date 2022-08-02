@@ -1,22 +1,11 @@
 <template>
-  <div class="page">
-    <img :src="logo" alt="" />
+  <div class="content">
+    <Hero :data="homepage.header" />
   </div>
 </template>
 
-<script lang="ts">
-  import logo from "@/assets/logos.svg";
-
-  export default {
-    setup() {
-      return { logo };
-    }
-  };
+<script lang="ts" setup>
+  import homepage from "@/json/homepage.json";
+  import Hero from "@/components/home/Hero.vue";
+  // import homeFaqBoard from "@/components/home/faqBoard.vue";
 </script>
-
-<style lang="scss" scoped>
-  img {
-    margin: auto 0 auto 0;
-    width: 600px;
-  }
-</style>

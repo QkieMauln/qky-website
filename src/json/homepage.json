@@ -1,0 +1,28 @@
+{
+  "header": {
+    "title": "I am Not a Furry Developer",
+    "description": "Hi! I'm Qky, I'm a Front-End developer and a Bot developer. I'm developing stuff just for fun. Furthermore, I'm and also interested in making 3D Animation on **Blender**."
+  },
+  "faq": [
+    {
+      "title": "Who are you?",
+      "description": "Let me introduce myself. My name is **Qky**, pronounced as \"**Kiki**\" or  \"**Kyuki**\" You can call me whatever, but please don't call me letter by letter... like \"**Q, K, Y**\" *(Kyu, Key, Why!?)*"
+    },
+    {
+      "title": "What the hell is this?",
+      "description": "Oh? Are you talking about this website? Well, this is my personal website :D maybe I will put something on it xD"
+    },
+    {
+      "title": "What are you good at?",
+      "description": "In the past **%s** years, I've learned a lot. I'm still learning some programming languages that I'm interested in. Not only that, but I also have 3D animation skills and drawing skills (well not very often since I lack the tools to draw digitally)"
+    },
+    {
+      "title": "Are you a furry?",
+      "description": "That is a weird question to ask, but for the record, yes, I am, but umm..."
+    },
+    {
+      "title": "This is nice!",
+      "description": "Oh, thanks! I made it by myself and with a bit of help from my pal [Matteu](https://matteusan.me). I'm glad that you're enjoying this website."
+    }
+  ]
+}
